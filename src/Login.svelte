@@ -70,7 +70,7 @@
                 }
                 user.set(loginResponse)
                 localStorage.setItem('user',JSON.stringify(loginResponse))
-                //navigate('/')
+                navigate('/')
             }
         })
         .catch(error=>console.log(error))
