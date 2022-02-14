@@ -1,12 +1,11 @@
 <script>
 
 	/** IMPORTS */
-	import { Router, Link, Route } from "svelte-navigator";
+	import { Router, Route } from "svelte-navigator";
 	import Login from './Login.svelte';
 	import Signup from './Signup.svelte';
 	import Home from './Home.svelte';
 	import PrivateRoute from "./routes/PrivateRoutes.svelte";
-	import {user} from './stores';
 
 	/** VARIABLES */
 	var sdkoptions = {
@@ -19,12 +18,6 @@
 
 <main>
 	<Router>
-		{#if !user}
-			<nav>
-				<Link to="signup">Signup</Link>
-				<Link to="login">Login</Link>
-			</nav>
-		{/if}
 		<div>
 			<Route path="signup">
 				<Signup {sdkoptions} />

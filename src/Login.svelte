@@ -23,6 +23,12 @@
        let loginFields={email,password};
        const endpoint=`https://api.loginradius.com/identity/v2/auth/login?apikey=${sdkoptions.apiKey}&apisecret=${sdkoptions.apiSecret}`;
        loading=true;
+       loginResponse={
+        error:null,
+        success:null,
+        profile:null,
+        auth_token:null
+    }
     fetch(endpoint,
         {
         method:'POST',
@@ -64,7 +70,7 @@
                 }
                 user.set(loginResponse)
                 localStorage.setItem('user',JSON.stringify(loginResponse))
-                navigate('/')
+                //navigate('/')
             }
         })
         .catch(error=>console.log(error))

@@ -34,6 +34,13 @@
             "Password": password
     }
     loading=true;
+    signupResponse={
+        success:null,
+        error:null,
+        uid:null,
+        id:null,
+        fullname:null
+    }
     const endpoint=`https://api.loginradius.com/identity/v2/manage/account?apikey=${sdkoptions.apiKey}&apisecret=${sdkoptions.apiSecret}`;
     fetch(endpoint,
     {
